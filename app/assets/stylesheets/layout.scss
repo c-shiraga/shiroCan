@@ -1,0 +1,64 @@
+header{
+    background-color: blue;
+    color: white;
+    padding: 10px 10px;
+}
+.wrapper{
+    //フッターを下に固定
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 20px;    //フッターの高さを指定
+    box-sizing: border-box;
+}
+footer{
+    //フッターを下に固定
+    position: absolute;
+    bottom: 0;
+    width: 100%;            //フッターの横幅を最大に指定
+    padding: 10px 0;        //フッターの高さの1/2をpaddingで指定
+
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+}
+.post{
+    color: white;
+    text-decoration: none;
+}
+.post:hover{
+    border-bottom: 1px solid white;
+}
+.title-logo{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+.Notification{
+    .notice {
+        background-color: #78f088;
+        color: #fff;
+        text-align: center;
+    }
+    .alert {
+        background-color: #F35500;
+        color: #fff;
+        text-align: center;
+    }
+}
+.error-message{
+    background-color: #E7B8C2;
+    color: #F35500;
+    padding: 5px;
+    font-weight: bold;
+}
+.error-message-area{
+    height: 100px;
+}
+.menu{
+    text-decoration: none;
+    color: white;
+}
+.menu:hover{
+    border-bottom: 1px solid white;
+}

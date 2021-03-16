@@ -1,0 +1,18 @@
+<header>
+    <%= link_to "しろくまCanvas", root_path, class: "title-logo"  %>
+    <% if user_signed_in? %>
+        <h6><%= current_user.name %>さん、こんにちは！</h6>
+        <%= link_to "ログアウト", destroy_user_session_path, class: 'post', method: :delete %>
+        <nav>
+            <ul>
+                <li><%= link_to "Home", root_path,  class: "menu" %></li>/
+                <li><%= link_to "投稿ページ", account_show_path,  class: "menu" %></li>
+            </ul>        
+        </nav>
+    <% else %>
+        <!-- ユーザーがログインしていなかった時の処理 -->
+        <h6> 現在ログインしていません </h6>
+        <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+        <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
+    <% end %>
+</header>
