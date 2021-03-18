@@ -1,0 +1,27 @@
+<% @title = "投稿ページ" %>
+<h1><%= @title %></h1>
+
+<%= form_with model: @book, local: true do |f| %>
+    <div>
+        <%= f.label :title, "タイトル" %>
+        <%= f.text_field :title, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.label :body, "本文" %>
+        <%= f.text_field :body, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.submit "投稿", class:"btn" %>
+    </div>
+<% end %>
+
+<% @books.each do |book| %>
+    <div>
+        <p><%= book.user.name %></p>
+        <p><%= book.title %></p>
+        <p><%= book.body %></p>
+        <% if book.user == current_user %>
+            <%= link_to "削除", book, method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: "btn" %>
+        <% end %>
+    </div>
+<% end %>
