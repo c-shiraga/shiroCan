@@ -11,17 +11,24 @@
         <%= f.text_field :body, class:"form-control" %>
     </div>
     <div>
+        <%= f.label :image, "画像" %>
+        <%= f.file_field :image %>
+    </div>
+    <div>
         <%= f.submit "投稿", class:"btn" %>
     </div>
 <% end %>
 
 <% @books.each do |book| %>
-    <div>
-        <p><%= book.user.name %></p>
-        <p><%= book.title %></p>
-        <p><%= book.body %></p>
-        <% if book.user == current_user %>
-            <%= link_to "削除", book, method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: "btn" %>
-        <% end %>
-    </div>
+    <% if current_user.name == book.user.name %>
+        <div>
+            <p><%= book.user.name %></p>
+            <p><%= book.title %></p>
+            <p><%= book.body %></p>
+            <p><%= image_tag book.image.to_s %></p>
+            <% if book.user == current_user %>
+                <%= link_to "削除", book, method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: "btn" %>
+            <% end %>
+        </div>
+    <% end %>
 <% end %>
