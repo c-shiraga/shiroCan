@@ -21,7 +21,7 @@
 
 <% @books.each do |book| %>
     <% if current_user.name == book.user.name %>
-        <div>
+        <div class="image-collection">
             <p><%= book.user.name %></p>
             <p><%= book.title %></p>
             <p><%= book.body %></p>

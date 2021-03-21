@@ -2,18 +2,30 @@ header{
     background-color: blue;
     color: white;
     padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.login-message{
+    font-size: 0.75rem;
+}
+li{
+    list-style: none;
+    margin: 0 20px;
+}
+ul{
+    display: flex;
 }
 .wrapper{
-    //フッターを下に固定
-    // min-height: 100vh;
-    // position: relative;
-    // padding-bottom: 20px;    //フッターの高さを指定
+    // フッターを下に固定
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 20px;    //フッターの高さを指定
     box-sizing: border-box;
 }
 footer{
     //フッターを下に固定
-    // position: absolute;
-    // bottom: 0;
+    position: absolute;
+    bottom: 0;
     width: 100%;            //フッターの横幅を最大に指定
     padding: 10px 0;        //フッターの高さの1/2をpaddingで指定
 
@@ -53,7 +65,7 @@ footer{
     font-weight: bold;
 }
 .error-message-area{
-    height: 100px;
+    height: 50px;
 }
 .menu{
     text-decoration: none;
@@ -61,4 +73,35 @@ footer{
 }
 .menu:hover{
     border-bottom: 1px solid white;
+}
+.form-area{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+    h2{
+        margin-bottom: 30px;
+    }
+    .field{  
+        .form-field{
+            border: gray 1px solid;
+            border-radius: 5px;
+            width: 800px;
+            height: 50px;
+            margin-bottom: 30px;
+        }
+    }
+    .btn{
+        background-color: #65C7F7;
+        color: white;
+        border-radius: 5px;
+        padding: 10px 40px;
+        cursor: pointer;
+        margin: 20px 0;
+    }
+    .btn:hover{
+        background-color: #008DBD;
+    }
+    
+    
 }

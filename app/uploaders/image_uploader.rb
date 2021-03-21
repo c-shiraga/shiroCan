@@ -1,6 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
-  # include CarrierWave::MiniMagick
-  # process resize_to_fit: [100, 100]
+  include CarrierWave::MiniMagick
+  
   
   # storage :file
 
@@ -19,6 +19,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_whitelist
     %w(jpg jpeg gif png)
   end
+
+  process resize_to_fill: [400, 400, 'Center']
 
   
 
