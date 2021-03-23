@@ -1,8 +1,9 @@
+
+<%= render "devise/shared/error_messages", resource: resource %>
 <div class="form-area">
+  
   <h2>新規登録</h2>
-  <div class="error-message-area">
-    <%= render "devise/shared/error_messages", resource: resource %>
-  </div>
+  
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 

@@ -3,4 +3,10 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .image-collection{
     margin-bottom: 40px;
+    
+}
+.image-area{
+    display: flex;
+    justify-content: space-around;
+    max-width: 1500px;
 }

@@ -15,7 +15,7 @@ class BooksController < ApplicationController
 
   def index
     @book = Book.new
-    @books = Book.all.order(id: "DESC")
+    @books = Book.all
   end
 
   def destroy

@@ -46,6 +46,8 @@ footer{
     color: white;
     font-size: 1.5rem;
 }
+/*************************ログインフォームのレイアウト**********************/
+
 .Notification{
     .notice {
         background-color: #78f088;
@@ -56,16 +58,16 @@ footer{
         background-color: #F35500;
         color: #fff;
         text-align: center;
+        
     }
 }
 .error-message{
-    background-color: #E7B8C2;
-    color: #F35500;
-    padding: 5px;
-    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    text-align: center;
 }
 .error-message-area{
-    height: 50px;
+    background-color: #F35500;
 }
 .menu{
     text-decoration: none;
@@ -84,24 +86,31 @@ footer{
     }
     .field{  
         .form-field{
-            border: gray 1px solid;
+            border: #aaa 2px solid;
             border-radius: 5px;
             width: 800px;
             height: 50px;
             margin-bottom: 30px;
+            outline: none;
+            font-size: 1.25rem;
         }
-    }
-    .btn{
-        background-color: #65C7F7;
-        color: white;
-        border-radius: 5px;
-        padding: 10px 40px;
-        cursor: pointer;
-        margin: 20px 0;
-    }
-    .btn:hover{
-        background-color: #008DBD;
-    }
-    
-    
+        .form-field:focus{
+            border-color: dodgerBlue;
+            box-shadow: 0 0 8px 0 dodgerBlue;
+        }   
+    }  
 }
+/*************************共通**********************/
+.btn{
+    background-color: #65C7F7;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 40px;
+    cursor: pointer;
+    margin: 20px 0;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: #008DBD;
+}
+

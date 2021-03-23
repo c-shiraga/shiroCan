@@ -1,34 +1,36 @@
 <% @title = "投稿ページ" %>
 <h1><%= @title %></h1>
-
-<%= form_with model: @book, local: true do |f| %>
-    <div>
-        <%= f.label :title, "タイトル" %>
-        <%= f.text_field :title, class:"form-control" %>
-    </div>
-    <div>
-        <%= f.label :body, "本文" %>
-        <%= f.text_field :body, class:"form-control" %>
-    </div>
-    <div>
-        <%= f.label :image, "画像" %>
-        <%= f.file_field :image %>
-    </div>
-    <div>
-        <%= f.submit "投稿", class:"btn" %>
-    </div>
-<% end %>
-
-<% @books.each do |book| %>
-    <% if current_user.name == book.user.name %>
-        <div class="image-collection">
-            <p><%= book.user.name %></p>
-            <p><%= book.title %></p>
-            <p><%= book.body %></p>
-            <p><%= image_tag book.image.to_s %></p>
-            <% if book.user == current_user %>
-                <%= link_to "削除", book, method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: "btn" %>
-            <% end %>
+<div class="form-area">
+    <%= form_with model: @book, local: true do |f| %>
+        <div class="field">
+            <%= f.label :title, "タイトル", class: "form-label" %><br />
+            <%= f.text_field :title, class: "form-field" %>
+        </div>
+        <div class="field">
+            <%= f.label :body, "コメント", class: "form-label" %><br />
+            <%= f.text_field :body, class: "form-field" %>
+        </div>
+        <div class="field">
+            <%= f.label :image, "画像", class: "form-label" %><br />
+            <%= f.file_field :image %>
+        </div>
+        <div>
+            <%= f.submit "投稿", class:"btn" %>
         </div>
     <% end %>
-<% end %>
+</div>
+<div class="image-area">
+    <% @books.each do |book| %>
+        <% if current_user.name == book.user.name %>
+            <div class="image-collection">
+                <p>名前　　 : <%= book.user.name %></p>
+                <p>タイトル : <%= book.title %></p>
+                <p>コメント : <%= book.body %></p>
+                <p><%= image_tag book.image.to_s %></p>
+                <% if book.user == current_user %>
+                    <%= link_to "削除", book, method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: "btn" %>
+                <% end %>
+            </div>
+        <% end %>
+    <% end %>
+</div>
