@@ -1,36 +1,13 @@
-<% @title = "投稿ページ" %>
+<% @title = "みんなの投稿" %>
 <h1><%= @title %></h1>
-<div class="form-area">
-    <%= form_with model: @book, local: true do |f| %>
-        <div class="field">
-            <%= f.label :title, "タイトル", class: "form-label" %><br />
-            <%= f.text_field :title, class: "form-field" %>
-        </div>
-        <div class="field">
-            <%= f.label :body, "コメント", class: "form-label" %><br />
-            <%= f.text_field :body, class: "form-field" %>
-        </div>
-        <div class="field">
-            <%= f.label :image, "画像", class: "form-label" %><br />
-            <%= f.file_field :image %>
-        </div>
-        <div>
-            <%= f.submit "投稿", class:"btn" %>
-        </div>
-    <% end %>
-</div>
+
 <div class="image-area">
     <% @books.each do |book| %>
-        <% if current_user.name == book.user.name %>
-            <div class="image-collection">
-                <p>名前　　 : <%= book.user.name %></p>
-                <p>タイトル : <%= book.title %></p>
-                <p>コメント : <%= book.body %></p>
-                <p><%= image_tag book.image.to_s %></p>
-                <% if book.user == current_user %>
-                    <%= link_to "削除", book, method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: "btn" %>
-                <% end %>
-            </div>
-        <% end %>
+        <div class="image-collection">
+            <p>投稿者　 : <%= book.user.name %></p>
+            <p>タイトル : <%= book.title %></p>
+            <p class="comment">コメント : <%= book.body %></p>
+            <p class="image"><%= image_tag book.image.to_s %></p>
+        </div>
     <% end %>
 </div>

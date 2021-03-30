@@ -1,9 +1,9 @@
 module ApplicationHelper
     def document_title
         if @title.present?
-            "#{@title} - ShiroCan"
+            "#{@title} - しろくまCanvas"
         else
-            "ShiroCan"
+            "しろくまCanvas"
         end
     end
 

@@ -2,11 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .image-collection{
-    margin-bottom: 40px;
-    
+    margin: 0 20px 40px;
 }
 .image-area{
     display: flex;
-    justify-content: space-around;
-    max-width: 1500px;
+    flex-wrap: wrap;
+    // justify-content: space-around;
+    width: 1400px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.image{
+    border: silver solid 5px;
+    margin-bottom: 20px;
+}
+.comment{
+    height: 50px;
 }

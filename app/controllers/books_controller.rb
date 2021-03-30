@@ -15,13 +15,23 @@ class BooksController < ApplicationController
 
   def index
     @book = Book.new
-    @books = Book.all
+    @books = Book.all.order(id: "DESC")
+  end
+
+  def show
+    @book = Book.new
+    @books = Book.all.order(id: "DESC")
+  end
+
+  def new
+    @book = Book.new
+    @books = Book.all.order(id: "DESC")
   end
 
   def destroy
     @book = Book.find(params[:id])
     @book.destroy!
-    redirect_to books_path
+    redirect_to action: :show
   end
 
 

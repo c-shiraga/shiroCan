@@ -1,10 +1,10 @@
 <header>
-    <%= link_to "しろくまCanvas", root_path, class: "title-logo"  %>
+    <%= link_to "しろくまCanvas", books_path, class: "title-logo"  %>
     <% if user_signed_in? %>
         <nav>
             <ul>
-                <li><%= link_to "Home", root_path,  class: "menu" %></li>/
-                <li><%= link_to "投稿ページ", :books,  class: "menu" %></li>
+                <li><%= link_to "みんなの投稿", books_path,  class: "menu" %></li>/
+                <li><%= link_to "投稿ページ", "/books/new",  class: "menu" %></li>
             </ul>        
         </nav>
         <div>

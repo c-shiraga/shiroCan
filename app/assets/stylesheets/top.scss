@@ -1,4 +1,60 @@
 h1{
     color: blue;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    margin-left: 11px;
+    margin-top: 20px;
+    font-family: 'Kosugi Maru', sans-serif;
 }
+h1.top-title{
+    position: relative;
+    top: 200px;
+    color: white;
+    margin-left: 10px;
+    font-size: 4.5rem;
+    font-family: 'RocknRoll One', sans-serif;
+    text-align: center;
+}
+.top-image{
+    background-image: image-url('shiroCan.jpg');
+    background-size: cover;
+    height: 100vh;
+    p{
+        position: relative;
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        top: 180px;
+    }
+    .top-btn-area{
+        margin-top: 300px;
+        .top-btn{
+            text-align: center;
+            margin-top: 70px;
+        }
+    }
+    
+}
+.top-login-btn{
+    background-color: #65C7F7;
+    color: white;
+    border-radius: 5px;
+    padding: 20px 80px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.top-login-btn:hover{
+    background-color: #008DBD;
+}
+.top-create-btn{
+    background-color: white;
+    color: #65C7F7;
+    border-radius: 5px;
+    padding: 20px 80px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.top-create-btn:hover{
+    background-color: #008DBD;
+    color: white;
+}
+

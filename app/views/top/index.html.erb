@@ -1,5 +1,18 @@
-<% @title = "トップページ" %>
-<h1><%= @title %></h1>
+<%= render "shared/notifications" %>
+<div class="top-image">
+    <h1 class="top-title">しろくまCanvas</h1>
+    <p>自分が描いた絵をみんなと共有しよう</p>
+    <div class="top-btn-area">
+        <div class="top-btn">
+            <%= link_to "ログイン", new_user_session_path, class: 'top-login-btn' %> <!-- ログイン画面に移行する -->
+        </div>
+        <div class="top-btn">
+            <%= link_to "はじめて", new_user_registration_path, class: 'top-create-btn' %> <!-- 新規登録画面に移行する -->
+        </div>
+    </div>
+</div>
+
+
 
 
 

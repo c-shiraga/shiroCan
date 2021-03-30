@@ -1,5 +1,9 @@
 class TopController < ApplicationController
     def index
-        render action: "index"        
+        if user_signed_in?
+            redirect_to books_path
+        else
+            render action: "index"
+        end        
     end
 end
