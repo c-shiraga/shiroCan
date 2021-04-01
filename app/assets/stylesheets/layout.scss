@@ -24,6 +24,7 @@ ul{
     position: relative;
     padding-bottom: 20px;    //フッターの高さを指定
     box-sizing: border-box;
+    
 }
 footer{
     //フッターを下に固定
@@ -31,7 +32,6 @@ footer{
     bottom: 0;
     width: 100%;            //フッターの横幅を最大に指定
     padding: 10px 0;        //フッターの高さの1/2をpaddingで指定
-
     background-color: black;
     color: white;
     text-align: center;

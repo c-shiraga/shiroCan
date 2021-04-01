@@ -7,7 +7,7 @@ h1{
 }
 h1.top-title{
     position: relative;
-    top: 200px;
+    top: 150px;
     color: white;
     margin-left: 10px;
     font-size: 4.5rem;
@@ -18,15 +18,16 @@ h1.top-title{
     background-image: image-url('shiroCan.jpg');
     background-size: cover;
     height: 100vh;
+    margin-top: -20px;
     p{
         position: relative;
         color: white;
         font-size: 1.5rem;
         text-align: center;
-        top: 180px;
+        top: 130px;
     }
     .top-btn-area{
-        margin-top: 300px;
+        margin-top: 250px;
         .top-btn{
             text-align: center;
             margin-top: 70px;
