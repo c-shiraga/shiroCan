@@ -11,11 +11,44 @@
     width: 1400px;
     margin: auto;
     margin-bottom: 50px;
+    
+}
+.image-details-collection{
+    display: flex;
+    justify-content: space-around;
+    .image-details{
+        font-size: 1.7rem;
+        margin-top: 80px;
+        
+    }
+    .image-creator{
+        font-size: 1.7rem;
+    }
+    .comment-area{
+        width: 600px;
+        min-height: 200px;
+        border: silver 1px solid;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}
+.return-btn{
+    text-align: center;
+    margin-bottom: 50px;
 }
 .image{
     border: silver solid 5px;
     margin-bottom: 20px;
+    margin-top: 10px;
+    width: 310px;
+    height: 310px;
+    
+}
+.image-main{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 .comment{
-    height: 50px;
+    height: 30px;
 }

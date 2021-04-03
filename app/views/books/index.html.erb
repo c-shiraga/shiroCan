@@ -4,10 +4,10 @@
 <div class="image-area">
     <% @books.each do |book| %>
         <div class="image-collection">
-            <p>投稿者　 : <%= book.user.name %></p>
-            <p>タイトル : <%= book.title %></p>
-            <p class="comment">コメント : <%= book.body %></p>
-            <p class="image"><%= image_tag book.image.to_s %></p>
+            <p>投稿者 : <%= book.user.name %></p>
+            <%= link_to book_path(book) do %>
+                <p class="image"><%= image_tag book.image.to_s, class:"image-main" %></p>
+            <% end %>
         </div>
     <% end %>
 </div>

@@ -1,6 +1,13 @@
 ---
 ja:
   activerecord:
+    models:
+      book:
+    attributes:
+      book:
+        title: タイトル
+        body: コメント
+        image: 画像
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

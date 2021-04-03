@@ -1,6 +1,6 @@
 <header>
-    <%= link_to "しろくまCanvas", books_path, class: "title-logo"  %>
     <% if user_signed_in? %>
+        <%= link_to "しろくまCanvas", books_path, class: "title-logo"  %>
         <nav>
             <ul>
                 <li><%= link_to "みんなの投稿", books_path,  class: "menu" %></li>/
@@ -13,6 +13,7 @@
         </div>
     <% else %>
         <!-- ユーザーがログインしていなかった時の処理 -->
+        <%= link_to "しろくまCanvas", root_path, class: "title-logo"  %>
         <div>
             <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
             <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->

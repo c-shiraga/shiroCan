@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   # アクションのフィルターをかける
-  before_action :authorize
+  # before_action :authorize
+  before_action :authenticate_user!
 
   def create
     @book = Book.new(book_params)
@@ -8,8 +9,8 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path
     else
-      @books = Book.all
-      render 'index'
+      @books = Book.all.order(id: "DESC")
+      render action: :new
     end
   end
 
@@ -19,8 +20,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.new
-    @books = Book.all.order(id: "DESC")
+    @book = Book.find(params[:id])
   end
 
   def new
@@ -31,16 +31,16 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy!
-    redirect_to action: :show
+    redirect_to action: :new
   end
 
 
   # ユーザーがログインしていなければTOPにリダイレクト
-  private def authorize
-    unless user_signed_in?
-      redirect_to controller: :top, action: :index
-    end
-  end
+  # private def authorize
+  #   unless user_signed_in?
+  #     redirect_to controller: :top, action: :index
+  #   end
+  # end
 
   private def book_params
     params.require(:book).permit(:title, :body, :image)
