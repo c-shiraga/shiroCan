@@ -20,7 +20,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  process resize_to_fill: [600, 600, 'Center']
+  process resize_to_limit: [600, 600]
 
   
 

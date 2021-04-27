@@ -1,8 +1,8 @@
-<% @title = "イラスト詳細ページ" %>
+<% @title = "イラスト詳細" %>
 <h1><%= @title %></h1>
 <div class="image-details-collection">
-    <div>
-        <p><%= image_tag @book.image.to_s %></p>
+    <div class="image-tag-area">
+        <div><%= image_tag @book.image.to_s %></div>
     </div>
     <div>
         <p class="image-creator">投稿者　 : <%= @book.user.name %></p>

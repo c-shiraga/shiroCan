@@ -9,14 +9,14 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path
     else
-      @books = Book.all.order(id: "DESC")
-      render action: :new
+      @books = Book.includes(:user).order("books.id DESC")
+      render :new
     end
   end
 
   def index
     @book = Book.new
-    @books = Book.all.order(id: "DESC")
+    @books = Book.includes(:user).order("books.id DESC")
   end
 
   def show
@@ -25,7 +25,7 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    @books = Book.all.order(id: "DESC")
+    @books = Book.includes(:user).order("books.id DESC")
   end
 
   def destroy

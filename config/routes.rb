@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "top#index"
   get "account/show" => "accounts#show"
   resources :books, only: [:create, :index, :destroy, :show, :new]
+  resources :chat
 end
